@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content, initial-scale="1.0">
+    <title>JavaScript Course</title>
+    <h1>JavaScript Course </h1>
+    <h2>Learn from the Scartch</h2>
+</head>
+<body>
+  var xhr = new XMLHttpRequest();
+var method = "GET";
+var url = "https://restcountries.com/v3.1/all";
+xhr.open(method, url);
+xhr.onload = function () {
+  if (xhr.status === 200) {
+    var details = JSON.parse(xhr.responseText);
+    for (var i = 0; i < details.length; i++) {
+      console.log(details[i].flag);
+
+    }
+  } else {
+    console.log("Request failed", xhr.status);
+  }
+};
+xhr.send(); 
+        
+
+    </script>
+</body>
+</html>
